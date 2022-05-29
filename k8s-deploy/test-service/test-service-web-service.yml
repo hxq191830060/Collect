@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: promise
+  name: test-service-web-service
+spec:
+  type: NodePort
+  ports:
+    - name: web
+      port: 31002
+      targetPort: 31002
+      nodePort: 30902
+      protocol: TCP
+  selector:
+    app: test-service

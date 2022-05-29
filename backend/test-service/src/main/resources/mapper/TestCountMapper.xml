@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.TestCountMapper">
+
+    <update id="optimismIncreaseTestNum">
+        update test_count set test_num=test_num+#{addValue}
+        where task_id=#{taskId} AND test_num=#{expect};
+    </update>
+
+    <select id="getWorkerNumberByTaskId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+        select test_num from test_count
+        where task_id=#{taskId};
+    </select>
+
+    <update id="decreaseNum">
+        update test_count set test_num=test_num-#{num};
+    </update>
+</mapper>

@@ -1,0 +1,168 @@
+@import "~@/style/color.scss";
+@import "~@/style/reset.scss";
+
+.blue {
+  color: $theme-blue;
+}
+
+.blue-pro {
+  color: $theme-blue-pro;
+}
+
+.orange {
+  color: $theme-orange;
+}
+
+.green {
+  color: $theme-green;
+}
+
+.red {
+  color: $theme-red;
+}
+
+.gray {
+  color: $theme-gray;
+}
+
+.gray-pro {
+  color: $theme-gray-pro;
+}
+
+
+.title-black {
+  color: $theme-black;
+}
+
+.title-black-lite {
+  color: $theme-black-lite
+}
+
+
+.bg-white {
+  background-color: white;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.ml-32 {
+  margin-left: 32px;
+}
+
+.flex-vc {
+  display: flex;
+  align-items: center;
+}
+
+.flex-hc {
+  display: flex;
+  justify-content: center;
+}
+
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+
+.self-center {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.header-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+}
+
+
+.title-large {
+  font-size: 50px;
+}
+
+.title-small {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+.title-mid {
+  font-size: 24px;
+  font-weight: 500;
+}
+

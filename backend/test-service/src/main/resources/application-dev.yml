@@ -1,0 +1,47 @@
+dubbo:
+  registry:
+    address: nacos://124.223.106.164:30848?preserved.heart.beat.timeout=4500&preserved.ip.delete.timeout=6000&preserved.heart.beat.interval=1500
+    group: dev
+    protocol: nacos
+  protocol:
+    name: dubbo
+    port: @rpcPort@
+
+    #IO线程池分发请求策略
+    dispatcher: message
+
+    #业务线程池配置
+    threadname: test-service-thread
+    threadpool: eager
+    queues: 0
+    corethreads: 5
+    threads: 10
+    accesslog: true
+  provider:
+    timeout: 2000 #超时时间
+    loadbalance: roundrobin
+    cluster: failover
+  scan:
+    base-packages: org.promise.test.service.api
+  application:
+    qos-enable: false
+    name: test-service
+
+spring:
+  datasource:
+    url: jdbc:mysql://150.158.158.176:30306/promise?setUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Hxq20001028
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    time-zone: GMT+8
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+evaluation:
+  threshold: 6.00

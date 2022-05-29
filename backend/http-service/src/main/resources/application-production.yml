@@ -1,0 +1,36 @@
+dubbo:
+  application:
+    name: http-service
+    qos-enable: false
+  registry:
+    address: nacos-headless-0.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-1.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-2.nacos-headless.nacos.svc.cluster.local:8848
+    group: production
+    check: false
+    protocol: nacos
+  consumer:
+    check: false
+    loadbalance: roundrobin
+    cluster: failover
+
+
+alioss:
+  endpoint: ${endpoint}
+  accessKeyId: ${accessKeyId}
+  accessKeySecret: ${accessKeySecret}
+  roleArn: ${roleArn}
+  regionId: ${regionId}
+  bucket: ${bucket}
+
+spring:
+  jackson:
+    time-zone: GMT+8
+
+python:
+  taskRecommendUrl: http://promise-recommend-inner-service.promise:8888/recommend/task
+  testRecommendUrl: http://promise-recommend-inner-service.promise:8888/recommend/report
+  reportClusterUrl: http://promise-recommend-inner-service.promise:8888/optimization/cluster
+  reportClassifyUrl: http://promise-recommend-inner-service.promise:8888/optimization/classify
+  wordCloudErrUrl: http://promise-recommend-inner-service.promise:8888/optimization/wordcloud_err
+  wordCloudSugUrl: http://promise-recommend-inner-service.promise:8888/optimization/wordcloud_sug
+  wordCloudCluUrl: http://promise-recommend-inner-service.promise:8888/optimization/wordcloud_clu
+  getClassifySimUrl: http://promise-recommend-inner-service.promise:8888/optimization/get_classification_sim

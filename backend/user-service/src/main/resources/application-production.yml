@@ -1,0 +1,76 @@
+dubbo:
+  registry:
+    address: nacos://nacos-headless-0.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-1.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-2.nacos-headless.nacos.svc.cluster.local:8848?preserved.heart.beat.timeout=4500&preserved.ip.delete.timeout=6000&preserved.heart.beat.interval=1500
+    group: production
+    protocol: nacos
+  protocol:
+    name: dubbo
+    port: @rpcPort@
+
+    #IO线程池分发请求策略
+    dispatcher: message
+
+    #业务线程池配置
+    threadname: user-service-thread #线程名
+    threadpool: eager #线程池实例选择EagerThreadPoolExecutor
+    queues: 0   #阻塞队列大小
+    corethreads: 5 #核心线程数目
+    threads: 10   #最大线程数目
+    accesslog: true
+  provider:
+    timeout: 2000
+    loadbalance: roundrobin
+    cluster: failover #集群方式
+    delay: 3000
+  scan:
+    base-packages: org.promise.user.service.api.impl
+  application:
+    qos-enable: false
+    name: user-service
+
+spring:
+  datasource:
+    url: ${RDS_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    time-zone: GMT+8
+
+  mail:
+    ### smtp服务器主机（163的）
+    host: ${MAIL_HOST}
+    ### 连接邮件服务器端口(默认SMTP 25 POP 110)
+    port: 465
+    ### 登录服务器邮箱账号
+    username: ${MAIL_USERNAME}
+    ### 登录服务器邮箱授权码（不是邮箱密码，这个是我们开通SMTP、POP时得到的授权码）
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          ## 默认发送方邮箱账号（当程序未指定发件人邮箱则默认取这个）
+          from: ${MAIL_PROPERTIES_SMTP_FROM}
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+            required: true
+  redis:
+    redisson:
+      file: classpath:redisson-production.yml
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+###验证码的过期时间
+verificationCode:
+  expiretime: 600000
+  codeLength: 6

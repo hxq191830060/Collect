@@ -1,0 +1,11 @@
+gunicorn
+gevent
+flask
+numpy
+requests
+jieba
+sklearn
+pandas
+openpyxl
+gensim
+joblib

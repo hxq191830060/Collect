@@ -1,0 +1,38 @@
+dubbo:
+  application:
+    name: http-service
+    qos-enable: false
+  registry:
+    address: 124.223.106.164:30848
+    group: dev
+    check: false
+    protocol: nacos
+  consumer:
+    check: false
+    loadbalance: roundrobin
+    cluster: failover
+
+
+
+alioss:
+  endpoint: oss-cn-hangzhou.aliyuncs.com
+  accessKeyId: LTAI5tMPjFdSQaqAwtS43Y3R
+  accessKeySecret: qq6BOJjR7aYNyOEAfqfS5VY9zdYqku
+  roleArn: acs:ram::1999218996805687:role/lyy
+  regionId: cn-hangzhou
+  bucket: se-3-promise
+
+spring:
+  jackson:
+    time-zone: GMT+8
+
+python:
+  taskRecommendUrl: http://150.158.158.176:31888/recommend/task
+  testRecommendUrl: http://150.158.158.176:31888/recommend/report
+  reportClusterUrl: http://150.158.158.176:31888/optimization/cluster
+  reportClassifyUrl: http://150.158.158.176:31888/optimization/classify
+  wordCloudErrUrl: http://150.158.158.176:31888/optimization/wordcloud_err
+  wordCloudSugUrl: http://150.158.158.176:31888/optimization/wordcloud_sug
+  wordCloudCluUrl: http://150.158.158.176:31888/optimization/wordcloud_clu
+  getClassifySimUrl: http://150.158.158.176:31888/optimization/get_classification_sim
+

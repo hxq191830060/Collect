@@ -1,0 +1,16 @@
+@import "~@/style/color.scss";
+
+.page {
+  box-sizing: border-box;
+  padding: 16px 16px;
+  min-height: 100vh;
+  width: 900px;
+  margin: 24px auto;
+  background-color: white;
+
+  .return-page-header {
+    cursor: pointer;
+    font-size: 14px;
+    color: $theme-black-lite;
+  }
+}

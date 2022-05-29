@@ -1,0 +1,32 @@
+@import "~@/style/color.scss";
+
+.page {
+  box-sizing: border-box;
+  padding: 32px 16px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.active-task-square, .history-task-square {
+  box-sizing: border-box;
+  padding: 4px;
+
+  .task-card-lite-box {
+    display: inline-block;
+    margin-right: 38px;
+  }
+
+  .task-card-lite-box:nth-child(4n) {
+    margin-right: 0;
+  }
+
+}
+
+
+.my-task-square::v-deep(.el-tabs__item.is-active) {
+  color: $theme-blue-pro;
+}
+
+.my-task-square::v-deep(.el-tabs__active-bar) {
+  background-color: $theme-blue-pro;
+}

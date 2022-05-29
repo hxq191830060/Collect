@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.publish.service.mapperService.TaskMapper">
+    <resultMap id="BaseResultMap" type="org.promise.publish.service.mapperService.po.TaskPO">
+        <result column="task_id" property="taskId"/>
+        <result column="task_name" property="taskName"/>
+        <result column="publisher_id" property="publisherId"/>
+        <result column="test_start_time" property="testStartTime"/>
+        <result column="test_end_time" property="testEndTime"/>
+        <result column="test_worker_count" property="testWorkerCount"/>
+        <result column="test_type" property="testType"/>
+        <result column="profit" property="profit"/>
+        <result column="allow_cancel_time" property="allowCancelTime"/>
+        <result column="requirement_description" property="requirementDescription"/>
+        <result column="basic_function" property="basicFunction"/>
+        <result column="task_img_list" property="taskImgList"/>
+        <result column="task_skill_list" property="taskSkillList"/>
+        <result column="task_os_list" property="taskOsList"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="taskId">
+        insert into task (
+        <trim suffixOverrides=",">
+            <if test="taskName != null">task_name,</if>
+            <if test="publisherId != null">publisher_id,</if>
+            <if test="testStartTime != null">test_start_time,</if>
+            <if test="testEndTime != null">test_end_time,</if>
+            <if test="testWorkerCount != null">test_worker_count,</if>
+            <if test="testType != null">test_type,</if>
+            <if test="profit != null">profit,</if>
+            <if test="allowCancelTime != null">allow_cancel_time,</if>
+            <if test="requirementDescription != null">requirement_description,</if>
+            <if test="basicFunction != null">basic_function,</if>
+            <if test="taskImgList!=null">task_img_list,</if>
+            <if test="taskSkillList!=null">task_skill_list,</if>
+            <if test="taskOsList!=null">task_os_list,</if>
+        </trim>
+        )
+        values (
+        <trim suffixOverrides=",">
+            <if test="taskName != null">#{taskName},</if>
+            <if test="publisherId != null">#{publisherId},</if>
+            <if test="testStartTime != null">#{testStartTime},</if>
+            <if test="testEndTime != null">#{testEndTime},</if>
+            <if test="testWorkerCount != null">#{testWorkerCount},</if>
+            <if test="testType != null">#{testType},</if>
+            <if test="profit != null">#{profit},</if>
+            <if test="allowCancelTime != null">#{allowCancelTime},</if>
+            <if test="requirementDescription != null">#{requirementDescription},</if>
+            <if test="basicFunction != null">#{basicFunction},</if>
+            <if test="taskImgList != null">#{taskImgList},</if>
+            <if test="taskSkillList != null">#{taskSkillList},</if>
+            <if test="taskOsList != null">#{taskOsList},</if>
+        </trim>
+        );
+    </insert>
+
+    <update id="update">
+        update task
+        <set>
+            <if test="taskName!=null">task_name=#{taskName},</if>
+            <if test="publisherId!=null">publisher_id=#{publisherId},</if>
+            <if test="testStartTime!=null">test_start_time=#{testStartTime},</if>
+            <if test="testEndTime!=null">test_end_time=#{testEndTime},</if>
+            <if test="testWorkerCount!=null">test_worker_count=#{testWorkerCount},</if>
+            <if test="testType!=null">test_type=#{testType},</if>
+            <if test="profit!=null">profit=#{profit},</if>
+            <if test="allowCancelTime!=null">allow_cancel_time=#{allowCancelTime},</if>
+            <if test="requirementDescription!=null">requirement_description=#{requirementDescription},</if>
+            <if test="basicFunction!=null">basic_function=#{basicFunction},</if>
+            <if test="taskImgList != null">task_img_list=#{taskImgList},</if>
+            <if test="taskSkillList != null">task_skill_list=#{taskSkillList},</if>
+            <if test="taskOsList != null">task_os_list=#{taskOsList},</if>
+        </set>
+        <where>
+            <if test="taskId!=null">
+                task_id=#{taskId}
+            </if>
+            and deleted=0;
+        </where>
+    </update>
+
+    <delete id="delete">
+        update task
+        set deleted=1
+        where task_id = #{taskId};
+    </delete>
+
+    <select id="selectTaskById" resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select *
+        from task
+        where task_id = #{taskId}
+          and deleted = 0;
+    </select>
+    <select id="selectTasksByPublisherId" resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select *
+        from task
+        where publisher_id = #{publisherId}
+        <if test="type==1">
+            and CURRENT_TIMESTAMP &lt;= test_start_time
+            and test_start_time &lt;= test_end_time
+        </if>
+        <if test="type==2">
+            and test_start_time &lt;= CURRENT_TIMESTAMP
+            and CURRENT_TIMESTAMP &lt;= test_end_time
+        </if>
+        <if test="type==3">
+            and test_start_time &lt;= test_end_time
+            and test_end_time &lt;= CURRENT_TIMESTAMP
+        </if>
+        and deleted = 0 order by test_start_time desc limit #{pageStart} ,#{pageSize};
+    </select>
+    <select id="selectTaskByPublisherIdAndTaskName"
+            resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select *
+        from task
+        where publisher_id = #{publisherId}
+          and task_name = #{taskName}
+          and deleted = 0;
+    </select>
+    <select id="selectTasksRunning" resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select *
+        from task
+        where test_start_time &lt;= CURRENT_TIMESTAMP
+          and CURRENT_TIMESTAMP &lt;= test_end_time
+          and deleted = 0
+        order by test_start_time desc
+            limit #{pageStart}, #{pageSize};
+    </select>
+    <select id="countWorkerByTaskId" resultType="java.lang.Integer">
+        select test_num
+        from test_count
+        where task_id = #{taskId};
+    </select>
+    <select id="selectAllTasks" resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select *
+        from task
+        where deleted = 0
+        order by test_start_time desc
+            limit #{pageStart}, #{pageSize};
+    </select>
+    <select id="batchSelectTasksByTaskId" resultType="org.promise.publish.service.mapperService.po.TaskPO">
+        select * from task where task_id in
+        <foreach collection="taskIds" open="(" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+        <if test="type==1">
+            and CURRENT_TIMESTAMP &lt;= test_start_time
+            and test_start_time &lt;= test_end_time
+        </if>
+        <if test="type==2">
+            and test_start_time &lt;= CURRENT_TIMESTAMP
+            and CURRENT_TIMESTAMP &lt;= test_end_time
+        </if>
+        <if test="type==3">
+            and test_start_time &lt;= test_end_time
+            and test_end_time &lt;= CURRENT_TIMESTAMP
+        </if>
+        and deleted=0;
+    </select>
+    <select id="countTaskNum" resultType="java.lang.Integer">
+        select count(*)
+        from task
+        <where>
+            <if test="publisherId!=null">
+                publisher_id = #{publisherId}
+            </if>
+            <if test="type==1">
+                and CURRENT_TIMESTAMP &lt;= test_start_time
+                and test_start_time &lt;= test_end_time
+            </if>
+            <if test="type==2">
+                and test_start_time &lt;= CURRENT_TIMESTAMP
+                and CURRENT_TIMESTAMP &lt;= test_end_time
+            </if>
+            <if test="type==3">
+                and test_start_time &lt;= test_end_time
+                and test_end_time &lt;= CURRENT_TIMESTAMP
+            </if>
+            and deleted = 0
+        </where>
+    </select>
+</mapper>

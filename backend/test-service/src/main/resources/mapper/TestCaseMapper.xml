@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.TestCaseMapper">
+
+    <insert id="insert" parameterType="org.promise.test.service.mapperService.po.TestCasePO">
+        insert into test_case (test_id, case_id, status, running_time, defect_level, error_msg, reproduce_steps)
+        VALUE (#{testId},#{caseId},#{status},#{runningTime},#{defectLevel},#{errorMsg},#{reproduceSteps});
+    </insert>
+
+    <insert id="insertBatch" parameterType="org.promise.test.service.mapperService.po.TestCasePO">
+        insert into test_case (test_id, case_id, status, running_time, defect_level, error_msg, reproduce_steps)
+        VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.testId},#{item.caseId},#{item.status},#{item.runningTime},#{item.defectLevel},#{item.errorMsg},#{item.reproduceSteps})
+        </foreach>
+    </insert>
+
+    <select id="getAllTestCaseByTestId" resultType="org.promise.test.service.mapperService.po.TestCasePO">
+        select * from test_case
+        where test_id=#{testId};
+    </select>
+
+    <select id="getUsableTestCaseByTestId" resultType="org.promise.test.service.mapperService.po.TestCasePO">
+        select * from test_case
+        where test_id=#{testId} AND deleted=0;
+    </select>
+
+    <update id="deleteAllTestCaseByTestId" parameterType="java.lang.Long">
+        update test_case
+        set deleted=1
+        where test_id=#{testId} AND deleted=0;
+    </update>
+</mapper>

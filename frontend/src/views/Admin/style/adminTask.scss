@@ -1,0 +1,236 @@
+@import "~@/style/color.scss";
+
+.page {
+  box-sizing: border-box;
+  padding: 32px 16px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  .main-content {
+    width: 820px;
+
+    .task-name {
+      font-size: 24px;
+      color: $theme-black-lite;
+      margin-right: 4px;
+      font-weight: 500;
+    }
+
+    .name-and-join {
+      background-color: white;
+      box-sizing: border-box;
+      padding: 12px;
+      border-radius: 4px;
+    }
+
+    .task-tab-box, {
+      background-color: white;
+      border-radius: 4px;
+      padding: 12px;
+      min-height: 600px;
+
+      .detail {
+        font-size: 14px;
+
+        .detail-header {
+          font-size: 14px;
+        }
+
+        .info-key {
+          color: $theme-gray-pro;
+          font-weight: 500;
+        }
+
+        .info-value {
+          color: $theme-black;
+        }
+
+        .introduction {
+          padding: 16px 16px;
+          box-sizing: border-box;
+          background-color: $bg-orange;
+          color: $theme-black-lite;
+          border-radius: 4px;
+          font-size: 12px;
+        }
+
+        .status {
+          .divider {
+            margin-left: 8px;
+            margin-right: 8px;
+            font-size: 20px;
+          }
+        }
+      }
+
+      .file {
+        font-size: 14px;
+
+        .file-header {
+          box-sizing: border-box;
+        }
+
+        .entry-type {
+          box-sizing: border-box;
+          padding: 0 16px;
+          font-weight: 500;
+          color: $theme-black;
+          width: 100%;
+
+          .name {
+            width: 278px;
+          }
+
+          .size {
+            width: 230px;
+          }
+
+          .upload-time {
+            width: 227px;
+          }
+        }
+      }
+
+      .feedback {
+        font-size: 18px;
+
+        .feedback-header {
+          font-size: 24px;
+          color: $theme-black;
+          font-weight: 500;
+        }
+
+        .feedback-content {
+          .item-key {
+            color: $theme-gray-pro;
+          }
+
+        }
+
+      }
+    }
+
+    .feedback-detail-box {
+      background-color: white;
+      border-radius: 4px;
+      padding: 16px;
+      min-height: 600px;
+
+      .return-page-header {
+        cursor: pointer;
+        font-size: 14px;
+        color: $theme-black-lite;
+      }
+
+      .feedback-detail {
+        font-size: 14px;
+
+        .feedback-detail-header {
+          font-size: 20px;
+          color: $theme-black;
+          font-weight: 500;
+        }
+
+        .feedback-detail-content {
+          .item-key {
+            color: $theme-gray-pro;
+          }
+
+          .shot-box {
+            display: inline-block;
+            width: 136px;
+            height: 136px;
+            margin-right: 22px;
+
+            &:nth-child(5n) {
+              margin-right: 0;
+            }
+
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+        }
+      }
+    }
+
+
+  }
+
+  .right-content {
+    border-radius: 8px;
+  }
+}
+
+
+.edit-task-dialog {
+  .edit-task-content {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  .cancel-confirm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.main-content::v-deep(.el-button) {
+  font-weight: 400;
+  height: 36px;
+  width: 100px;
+}
+
+.task-tab-box::v-deep(.el-tabs__item.is-active) {
+  color: $theme-orange;
+  font-size: 14px;
+}
+
+.task-tab-box::v-deep(.el-tabs__item) {
+  font-size: 12px;
+}
+
+.task-tab-box::v-deep(.el-tabs__item:hover) {
+  color: $theme-orange;
+}
+
+.task-tab-box::v-deep(.el-tabs__active-bar) {
+  background-color: $theme-orange;
+}
+
+.feedback-content ::v-deep(.el-textarea__inner) {
+  font-size: 14px;
+}
+
+
+.edit-task-dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+}
+
+.edit-task-dialog ::v-deep(.el-dialog__title) {
+  font-weight: 500;
+  color: $theme-black-lite;
+}
+
+.edit-task-dialog ::v-deep(.el-input) {
+  width: 300px;
+}
+
+.edit-task-dialog::v-deep(.el-button) {
+  font-weight: 400;
+}
+
+.edit-task-dialog::v-deep(.el-textarea__inner), .edit-task-dialog::v-deep(.el-input--default) {
+  width: 300px;
+}
+
+.edit-task-dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}

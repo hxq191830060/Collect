@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-service-deploy
+  namespace: promise
+spec:
+  selector:
+    matchLabels:
+      app: http-service
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: http-service
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: http-service
+          image: registry.cn-hangzhou.aliyuncs.com/homework-promise/http-service:lastest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 31000
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: endpoint
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: endpoint
+            - name: accessKeyId
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: accessKeyId
+            - name: accessKeySecret
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: accessKeySecret
+            - name: roleArn
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: roleArn
+            - name: regionId
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: regionId
+            - name: bucket
+              valueFrom:
+                secretKeyRef:
+                  name: aliyun-oss-secret
+                  key: bucket
+          resources:
+            requests:
+              memory: 200Mi
+            limits:
+              memory: 512Mi
+          livenessProbe:
+            exec:
+              command:
+                - ls
+                - /root
+          readinessProbe:
+            httpGet:
+              port: 31000
+              scheme: HTTP
+              path: /promise/monitor/health
+            initialDelaySeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+            periodSeconds: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh","-c","sleep 10"]
+      imagePullSecrets:
+        - name: aliyun-secret
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - http-service
+              weight: 100

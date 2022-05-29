@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.user.service.mapperService.UserMapper">
+    <resultMap id="BaseResultMap" type="org.promise.user.service.mapperService.po.UserPO">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="password" column="password"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="role" column="role"/>
+        <result property="avatar" column="avatar"/>
+        <result property="introduction" column="introduction"/>
+        <result property="skills" column="skills"/>
+        <result property="taskPreference" column="task_preference"/>
+        <result property="testDevs" column="test_devs"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <insert id="insert">
+        insert into user (user_name, password, nick_name, role)
+        values (#{userName}, #{password}, #{nickName}, #{role});
+    </insert>
+
+
+    <update id="update">
+        update user
+        <set>
+            <if test="password!=null">password=#{password},</if>
+            <if test="nickName!=null">nick_name=#{nickName},</if>
+            <if test="avatar!=null">avatar=#{avatar},</if>
+            <if test="introduction!=null">introduction=#{introduction},</if>
+            <if test="role!=null">role=#{role},</if>
+            <if test="skills!=null">skills=#{skills},</if>
+            <if test="taskPreference!=null">task_preference=#{taskPreference},</if>
+            <if test="testDevs!=null">test_devs=#{testDevs},</if>
+        </set>
+            where user_id=#{userId} limit 1;
+    </update>
+
+
+    <select id="selectUserByUserName" resultType="org.promise.user.service.mapperService.po.UserPO">
+        select *
+        from user
+        where user_name = #{userName};
+    </select>
+
+
+    <select id="selectUserByUserId" resultType="org.promise.user.service.mapperService.po.UserPO">
+        select *
+        from user
+        where user_id = #{userId};
+    </select>
+
+    <select id="getUserInfoListByUserIdList" resultType="org.promise.user.service.mapperService.po.UserPO">
+        select *
+        from user
+        <where>
+            <foreach collection="list" index="index" item="item" open="user_id IN (" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>

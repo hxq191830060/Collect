@@ -1,0 +1,18 @@
+{
+    "activity": 1.1,
+    "workerSkills":[
+        "HTML",
+        "CSS",
+        "JavaScript"
+    ],
+    "taskPreference":[
+        "全栈",
+        "前端",
+        "系统设计"
+    ],
+    "teskDevs":[
+        "centos 7",
+        "windows 10"
+    ]
+
+}

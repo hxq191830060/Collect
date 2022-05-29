@@ -1,0 +1,44 @@
+server:
+  port: @serverPort@
+  shutdown: graceful
+
+spring:
+  profiles:
+    active: @profile@
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+logging:
+  config: classpath:logback.xml
+
+management:
+  endpoints:
+    enabled-by-default: false #将所有的endpoint关闭
+    web:
+      base-path: /promise/monitor
+      discovery:
+        enabled: true
+      exposure:
+        #哪些endpoint可以通过web访问(所有开启的endpoint都可以通过web访问)
+        include: "*"
+      cors:
+        #跨域配置
+        allowed-methods: "*"
+        allowed-origins: "*"
+    jmx:
+      exposure:
+        #打开的endpoint都可以通过jmx访问
+        include: "*"
+  endpoint:
+    #按需打开endpoint
+    metrics:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
+    env:
+      enabled: true
+    configprops:
+      enabled: true

@@ -1,0 +1,195 @@
+@import "~@/style/color.scss";
+
+.user {
+  min-height: 100vh;
+}
+
+.page {
+  box-sizing: border-box;
+  padding: 32px 0;
+  width: 1200px;
+  margin: 0 auto;
+
+  .favicon {
+    object-fit: cover;
+    height: 45px;
+  }
+
+  .user-menu {
+    .tab-left {
+      width: 300px;
+
+      .tab-name {
+        height: 42px;
+        font-size: 14px;
+        font-weight: 500;
+        border-top-right-radius: 32px;
+        border-bottom-right-radius: 32px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        color: $theme-gray-pro;
+
+        &:hover {
+          background-color: $bg-orange;
+        }
+      }
+
+
+      #active-tab {
+        background-color: $bg-blue;
+        color: $theme-blue-pro;
+      }
+    }
+
+    .tab-right {
+      width: 900px;
+
+      .title-description {
+        font-size: 16px;
+        color: $theme-gray-pro;
+      }
+
+      .user-info {
+        .base-info-form {
+          width: 100%;
+          padding: 16px 0 60px 0;
+          box-sizing: border-box;
+          border: 1px solid #E0E0E0;
+          border-radius: 8px;
+
+          .avatar img {
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+          }
+
+          .info-item {
+            border: none;
+            border-bottom: 1px solid #E0E0E0;
+            height: 75px;
+            cursor: pointer;
+            padding: 0 32px;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            font-size: 16px;
+
+            &:hover {
+              background-color: $bg-orange;
+            }
+
+            .info-item-key {
+              color: $theme-gray-pro;
+            }
+
+            .info-item-value {
+              color: $theme-black;
+            }
+
+          }
+        }
+      }
+
+      .preference-settings {
+        .task-mode-checkbox-group, .test-environment-checkbox-group, .knowledge-domain-checkbox-group {
+          width: 100%;
+          padding: 16px 0 16px 32px;
+          box-sizing: border-box;
+
+
+          .check-box-container {
+            margin-bottom: 16px;
+            margin-right: 16px;
+            display: inline-block;
+
+          }
+
+        }
+
+        .submit-preference-btn {
+          line-height: 10px;
+          box-sizing: border-box;
+          padding: 16px 48px;
+          height: 42px;
+          border: none;
+          outline: none;
+          border-radius: 48px;
+          cursor: pointer;
+          background-color: $theme-blue-pro;
+          color: #fff;
+          text-transform: uppercase;
+          margin: 64px 16px 0 16px;
+          font-size: 16px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background-color: $theme-orange;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
+
+
+.info-dialog {
+  .edit-btn {
+    height: 36px;
+    width: 220px;
+    border-radius: 36px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: $theme-blue;
+    color: white;
+  }
+
+  .avatar-dialog {
+    .avatar-dialog-img {
+      border-radius: 50%;
+      width: 240px;
+      height: 240px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .avatar-img-info1 {
+      font-size: 22px;
+      color: $theme-black;
+      text-align: center;
+    }
+
+    .avatar-img-info2 {
+      font-size: 16px;
+      text-align: center;
+      color: $theme-gray-pro;
+    }
+  }
+
+  .nickname-dialog {
+    .alert-txt {
+      margin-top: 4px;
+      font-size: 13px;
+      margin-right: 8px;
+    }
+  }
+}
+
+
+.info-dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.info-dialog::v-deep(.el-input__inner) {
+  height: 45px;
+  font-size: 18px;
+}
+
+.info-dialog::v-deep(.el-upload) {
+  width: 100%;
+}

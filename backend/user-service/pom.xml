@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>backend-crowdsource</artifactId>
+        <groupId>org.promise</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>user-service</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.name>user-service</project.name>
+        <projectVersion>1.0</projectVersion>
+        <serverPort>31003</serverPort>
+        <rpcPort>30003</rpcPort>
+        <profile>dev</profile>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.promise</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>org.promise</groupId>
+            <artifactId>user-service-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <!--数据库相关依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>de.ruedigermoeller</groupId>
+            <artifactId>fst</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!--打包配置-->
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/META-INF</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>app.properties</include>
+                </includes>
+                <targetPath>META-INF/</targetPath>
+            </resource>
+        </resources>
+
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.promise.user.service.UserServiceApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <skip>false</skip>
+                    <skipTests>false</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:8u332-oracle</image>
+                    </from>
+                    <to>
+                        <image>registry.cn-hangzhou.aliyuncs.com/homework-promise/user-service</image>
+                        <tags>
+                            <tag>${projectVersion}</tag>
+                        </tags>
+                        <auth>
+                            <username>黄相淇</username>
+                            <password>Hxq20001028</password>
+                        </auth>
+                    </to>
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <container>
+                        <ports>
+                            <port>${serverPort}</port>
+                            <port>${rpcPort}</port>
+                        </ports>
+<!--                        <jvmFlags>-->
+<!--                            <jvmFlag>-XX:+UseContainerSupport</jvmFlag>-->
+
+<!--                            &lt;!&ndash;GC相关&ndash;&gt;-->
+<!--                            <jvmFlag>-XX:+UseG1GC</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintGCDateStamps</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintGCDetails</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintTenuringDistribution</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintHeapAtGC</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintGCApplicationStoppedTime</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+PrintGCTimeStamps</jvmFlag>-->
+<!--                            <jvmFlag>-Xloggc:/home/work/logs/user-service-$POD_IP-gc-%t.log</jvmFlag>-->
+<!--                            <jvmFlag>-XX:+UseGCLogFileRotation</jvmFlag>-->
+<!--                            <jvmFlag>-XX:NumberOfGCLogFiles=14</jvmFlag>-->
+<!--                            <jvmFlag>-XX:GCLogFileSize=100M</jvmFlag>-->
+
+<!--                            &lt;!&ndash;Dump文件&ndash;&gt;-->
+<!--                            <jvmFlag>-XX:+HeapDumpOnOutOfMemoryError</jvmFlag>-->
+<!--                            <jvmFlag>-XX:HeapDumpPath=/home/work/logs/user-service-$POD_IP-dump-$(date '+%s').hprof</jvmFlag>-->
+<!--                        </jvmFlags>-->
+                        <mainClass>org.promise.user.service.UserServiceApplication</mainClass>
+                    </container>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>target/jacoco.exec</dataFile>
+                            <outputDirectory>target/jacoco-ut</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

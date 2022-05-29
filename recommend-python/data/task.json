@@ -1,0 +1,38 @@
+{
+    "tasks":[
+        {
+            "taskId": 1,
+            "taskMode":"前端",
+            "requireSkills":[
+                "HTML",
+                "CSS"
+            ],
+            "testEnvironments":[
+                "centos 8",
+                "centos 7"
+            ]
+        },
+        {
+            "taskId": 2,
+            "taskMode":"后端/服务端",
+            "requireSkills":[
+                "Spring",
+                "SpringMVC"
+            ],
+            "testEnvironments":[
+                "centos 8",
+                "centos 7"
+            ]
+        },
+        {
+            "taskId": 3,
+            "taskMode":"Bug检测",
+            "requireSkills":[
+                "Java"
+            ],
+            "testEnvironments":[
+                "windows 11"
+            ]
+        }
+    ]
+}

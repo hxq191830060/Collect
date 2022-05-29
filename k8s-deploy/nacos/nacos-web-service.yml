@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos-web-service
+  namespace: nacos
+spec:
+  ports:
+    - name: web
+      port: 80
+      targetPort: 8848
+      nodePort: 30848
+      protocol: TCP
+  selector:
+    app: nacos
+  sessionAffinity: None
+  type: NodePort

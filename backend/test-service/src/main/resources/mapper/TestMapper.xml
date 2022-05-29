@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.TestMapper">
+
+    <insert id="insert" parameterType="org.promise.test.service.mapperService.po.TestPO">
+        insert into test (task_id,worker_id,state,accept_time,finish_time,cancel_time,test_tools,operating_system,conclusion,suggestion)
+        value (#{taskId},#{workerId},#{state},#{acceptTime},#{finishTime},#{cancelTime},#{testTools},#{operatingSystem},#{conclusion},#{suggestion});
+    </insert>
+
+
+    <select id="countTestByWorkerIdAndTaskIdAndState" resultType="java.lang.Integer">
+        select count(*) from test
+        where task_id=#{taskId} AND worker_id=#{workerId} AND state=#{state};
+    </select>
+
+
+    <select id="getTestByWorkerIdAndTaskIdAndState" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test
+        where task_id=#{taskId} AND worker_id=#{workerId} AND state=#{state};
+    </select>
+
+    <update id="updateByTestId" parameterType="org.promise.test.service.mapperService.po.TestPO">
+        update test
+        <set>
+            <if test="state!=null">
+                state=#{state},
+            </if>
+            <if test="acceptTime!=null">
+                accept_time=#{acceptTime},
+            </if>
+            <if test="finishTime!=null">
+                finish_time=#{finishTime},
+            </if>
+            <if test="cancelTime!=null">
+                cancel_time=#{cancelTime},
+            </if>
+            <if test="testTools!=null">
+                test_tools=#{testTools},
+            </if>
+            <if test="operatingSystem!=null">
+                operating_system=#{operatingSystem},
+            </if>
+            <if test="conclusion!=null">
+                conclusion=#{conclusion},
+            </if>
+            <if test="suggestion!=null">
+                suggestion=#{suggestion},
+            </if>
+        </set>
+        where test_id=#{testId};
+    </update>
+
+
+    <select id="countTestByWorkerIdAndState" resultType="java.lang.Integer">
+        select count(*)
+        from test
+        where worker_id=#{workerId} AND state=#{state};
+    </select>
+
+    <select id="getTestInfoByTestId" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test where test_id=#{testId};
+    </select>
+
+    <select id="getTestListByWorkerIdAndStateByPage" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test
+        where worker_id=#{workerId} AND state=#{state}
+        limit #{begin},#{pageSize};
+    </select>
+
+    <select id="getTestListByWorkerIdAndStateListByPage" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test
+        where worker_id=#{workerId} AND (
+        <foreach collection="list" item="item" separator=" OR ">
+            state=#{item}
+        </foreach>
+        )
+        limit #{begin},#{pageSize};
+    </select>
+
+
+    <select id="getTestListByTaskIdAndState" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test
+        where task_id=#{taskId} AND state=#{state};
+    </select>
+
+    <select id="countTestInfoByWorkerIdAndStateList" resultType="java.lang.Integer">
+        select count(*) from test
+        where worker_id=#{workerId} AND (
+            <foreach collection="list" item="item" separator=" OR ">
+                state=#{item}
+            </foreach>
+            )
+    </select>
+
+    <select id="getTestInfoByTaskIdAndWorkerAndStateList" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select * from test
+        where task_id=#{taskId} AND worker_id=#{workerId}  AND (
+            <foreach collection="list" item="item" separator=" OR ">
+                state=#{item}
+            </foreach>
+            )
+    </select>
+
+    <select id="getTestListByTestIdList" resultType="org.promise.test.service.mapperService.po.TestPO">
+        select *
+        from test
+        where test_id IN (
+            <foreach collection="list" item="item" separator=",">
+                #{item}
+            </foreach>
+            )
+    </select>
+</mapper>

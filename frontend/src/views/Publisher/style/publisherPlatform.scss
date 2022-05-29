@@ -1,0 +1,139 @@
+@import "~@/style/color.scss";
+
+.page {
+  box-sizing: border-box;
+  padding: 32px 16px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.published-task-square, .pending-task-square, .history-task-square {
+  box-sizing: border-box;
+  padding: 4px;
+
+  .task-card-lite-box {
+    display: inline-block;
+    margin-right: 38px;
+  }
+
+  .task-card-lite-box:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+//用于新增测试的卡片
+.add-new-task {
+  width: 260px;
+  height: 176px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: all ease-in-out 0.2s;
+  background-color: white;
+  border: 2px dashed #c0ccda;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+    border-color: #409eff;
+    color: #409eff;
+  }
+
+  img {
+    //水平+垂直居中的另一种方式
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+.dialog {
+  .new-task-content, .optional-content {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  .cancel-confirm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.option-txt {
+  color: $theme-gray;
+  font-size: 16px;
+  text-align: left;
+  margin-left: 82px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    margin-right: 4px;
+  }
+
+  img {
+    display: block;
+    height: 14px;
+    width: 14px;
+  }
+}
+
+.my-task-square::v-deep(.el-tabs__item.is-active) {
+  color: $theme-blue-pro;
+}
+
+.my-task-square::v-deep(.el-tabs__active-bar) {
+  background-color: $theme-blue-pro;
+}
+
+
+.dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+}
+
+.dialog ::v-deep(.el-dialog__title) {
+  font-weight: 500;
+  color: $theme-black-lite;
+}
+
+.dialog ::v-deep(.el-input) {
+  width: 300px;
+}
+
+.dialog::v-deep(.el-button) {
+  font-weight: 400;
+}
+
+.dialog::v-deep(.el-textarea__inner), .dialog::v-deep(.el-input--default) {
+  width: 300px;
+}
+
+.dialog::v-deep(.el-divider--horizontal) {
+  border-top: 1px #cccccc solid;
+}
+
+.dialog::v-deep(.el-divider__text) {
+  color: $theme-gray;
+}
+
+.dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.dialog::v-deep(.el-input-number) {
+  width: 300px;
+
+  .el-input__inner {
+    text-align: left;
+    padding-left: 11px;
+  }
+
+}
