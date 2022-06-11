@@ -1,0 +1,21 @@
+.page {
+  box-sizing: border-box;
+  padding: 32px 16px;
+  width: 1200px;
+  margin: 0 auto;
+
+  .public-task-square {
+    box-sizing: border-box;
+    padding: 5px;
+
+
+    .task-card-box {
+      display: inline-block;
+      margin-right: 38px;
+    }
+
+    .task-card-box:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}

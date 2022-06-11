@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.TestCollaborationRecordMapper">
+
+    <insert id="insert" parameterType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        insert into test_collaboration_record (test_id, worker_id, evaluation, recommendation)
+        values (#{testId},#{workerId},#{evaluation},#{recommendation});
+    </insert>
+
+    <insert id="insertBatch" parameterType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        insert into test_collaboration_record (test_id,worker_id,evaluation,recommendation)
+        VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.testId},#{item.workerId},#{item.evaluation},#{item.recommendation})
+        </foreach>
+    </insert>
+
+    <select id="getAllTestCollaborationRecordByTestId" resultType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        select *
+        from test_collaboration_record
+        where test_id=#{testId};
+    </select>
+
+    <select id="getUsableTestCollaborationRecordByTestId" resultType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        select *
+        from test_collaboration_record
+        where test_id=#{testId} AND deleted=0;
+    </select>
+
+    <select id="getUsableTestCollaborationRecordByTestIdAndWorkerId" resultType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        select * from test_collaboration_record
+        where test_id=#{testId} AND worker_id=#{workerId} AND deleted=0;
+    </select>
+
+    <update id="updateById" parameterType="org.promise.test.service.mapperService.po.TestCollaborationRecordPO">
+        update test_collaboration_record
+        <set>
+            <if test="evaluation!=null">
+                evaluation=#{evaluation},
+            </if>
+            <if test="recommendation!=null">
+                recommendation=#{recommendation},
+            </if>
+        </set>
+        where id=#{id} AND deleted=0;
+    </update>
+
+</mapper>

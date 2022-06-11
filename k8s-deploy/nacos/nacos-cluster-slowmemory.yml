@@ -1,0 +1,104 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: nacos-headless
+  namespace: nacos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nacos
+  serviceName: nacos-headless
+  template:
+    metadata:
+      labels:
+        app: nacos
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: JVM_XMS
+              value: 256m
+            - name: JVM_XMX
+              value: 256m
+            - name: JVM_XMN
+              value: 128m
+            - name: JVM_MS
+              value: 64m
+            - name: JVM_MMS
+              value: 160m
+            - name: NACOS_DUBUG
+              value: 'y'
+            - name: EMBEDDED_STORAGE
+              value: embedded
+            - name: NACOS_REPLICAS
+              value: '3'
+            - name: NACOS_SERVER_PORT
+              value: '8848'
+            - name: NACOS_APPLICATION_PORT
+              value: '8848'
+            - name: PREFER_HOST_MODE
+              value: hostname
+            - name: NACOS_SERVERS
+              value: >-
+                nacos-headless-0.nacos-headless.nacos.svc.cluster.local:8848
+                nacos-headless-1.nacos-headless.nacos.svc.cluster.local:8848
+                nacos-headless-2.nacos-headless.nacos.svc.cluster.local:8848
+            ##监控相关配置
+            - name: MANAGEMENT_ENDPOINTS_ENABLED-BY-DEFAULT
+              value: "false"
+            - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+              value: "*"
+            - name: MANAGEMENT_ENDPOINT_METRICS_ENABLED
+              value: "true"
+            - name: MANAGEMENT_ENDPOINT_HEALTH_ENABLED
+              value: "true"
+            - name: MANAGEMENT_ENDPOINT_HEALTH_SHOW-DETAILS
+              value: "always"
+            - name: MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED
+              value: "true"
+            - name: MANAGEMENT_ENDPOINT_ENV_ENABLED
+              value: "true"
+            - name: MANAGEMENT_ENDPOINT_CONFIGPROPS_ENABLED
+              value: "true"
+
+          image: 'nacos/nacos-server:2.0.3'
+          imagePullPolicy: IfNotPresent
+          name: k8s-nacos
+          ports:
+            - containerPort: 8848
+              name: client
+              protocol: TCP
+            - containerPort: 9848
+              name: client-rpc
+              protocol: TCP
+            - containerPort: 9849
+              name: raft-rpc
+              protocol: TCP
+            - containerPort: 7848
+              name: old-raft-rpc
+              protocol: TCP
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - nacos
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler

@@ -1,0 +1,45 @@
+dubbo:
+  registry:
+    address: nacos://nacos-headless-0.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-1.nacos-headless.nacos.svc.cluster.local:8848,nacos-headless-2.nacos-headless.nacos.svc.cluster.local:8848?preserved.heart.beat.timeout=4500&preserved.ip.delete.timeout=6000&preserved.heart.beat.interval=1500
+    group: production
+    protocol: nacos
+  protocol:
+    name: dubbo
+    port: @rpcPort@
+
+    #IO线程池分发请求策略
+    dispatcher: message
+
+    #业务线程池配置
+    threadname: publish-service-thread
+    threadpool: eager
+    queues: 0
+    corethreads: 5
+    threads: 10
+    accesslog: true
+  provider:
+    timeout: 2000
+    loadbalance: roundrobin
+    cluster: failover
+    delay: 3000
+  scan:
+    base-packages: org.promise.publish.service.api.impl
+  application:
+    qos-enable: false
+    name: publish-service
+
+spring:
+  datasource:
+    url: ${RDS_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    time-zone: GMT+8
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+

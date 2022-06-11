@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: publish-service-deploy
+  namespace: promise
+spec:
+  selector:
+    matchLabels:
+      app: publish-service
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: publish-service
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: publish-service
+          image: registry.cn-hangzhou.aliyuncs.com/homework-promise/publish-service:53
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 31001
+            - containerPort: 30001
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: RDS_URL
+              valueFrom:
+                secretKeyRef:
+                  key: rds.url
+                  name: aliyun-rds-secret
+            - name: RDS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: rds.username
+                  name: aliyun-rds-secret
+            - name: RDS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: rds.password
+                  name: aliyun-rds-secret
+          resources:
+            requests:
+              memory: 200Mi
+            limits:
+              memory: 512Mi
+          livenessProbe:
+            exec:
+              command:
+                - ls
+                - /root
+          readinessProbe:
+            httpGet:
+              port: 31001
+              scheme: HTTP
+              path: /promise/monitor/health
+            initialDelaySeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+            periodSeconds: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh","-c","sleep 10" ]
+      imagePullSecrets:
+        - name: aliyun-secret
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - user-service
+                        - publish-service
+                        - test-service
+                        - promise-recommend
+                        - nacos
+              weight: 100

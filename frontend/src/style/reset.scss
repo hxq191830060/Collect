@@ -1,0 +1,78 @@
+// 重置所有默认样式
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: sans-serif;
+  background: white;
+  color: #3a4a5a;
+}
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, ul, li, fieldset, form, label, input, legend, table, caption, tbody, tfoot, thead, tr, th, td, textarea, article, aside, audio, canvas, figure, footer, header, mark, menu, nav, section, time, video {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section, blockquote {
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  border: 0 none;
+  vertical-align: top;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+strong, em, i {
+  font-style: normal;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+mark {
+  background: none;
+}
+
+input::-ms-clear {
+  display: none !important;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}

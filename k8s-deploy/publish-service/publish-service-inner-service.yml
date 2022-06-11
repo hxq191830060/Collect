@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: promise
+  name: publish-service-inner-service
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+    - port: 31001
+      name: http-port
+      targetPort: 31001
+  selector:
+    app: publish-service

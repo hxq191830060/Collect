@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promise-recommend-deploy
+  namespace: promise
+spec:
+  selector:
+    matchLabels:
+      app: promise-recommend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: promise-recommend
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: promise-recommend
+          image: registry.cn-hangzhou.aliyuncs.com/homework-promise/promise-recommend:10
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+          resources:
+            requests:
+              memory: 500Mi
+            limits:
+              memory: 1Gi
+          livenessProbe:
+            exec:
+              command:
+                - ls
+                - /root
+          readinessProbe:
+            httpGet:
+              port: 8888
+              scheme: HTTP
+              path: /health
+            initialDelaySeconds: 3
+            failureThreshold: 3
+            successThreshold: 1
+            periodSeconds: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh","-c","sleep 10" ]
+      imagePullSecrets:
+        - name: aliyun-secret
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - user-service
+                        - publish-service
+                        - test-service
+                        - nacos
+              weight: 100

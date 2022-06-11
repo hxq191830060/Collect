@@ -1,0 +1,45 @@
+@import "~@/style/color.scss";
+
+.page {
+  box-sizing: border-box;
+  padding: 16px 16px 16px 16px;
+  width: 900px;
+  margin: 24px auto;
+  background-color: white;
+
+  .return-page-header {
+    cursor: pointer;
+    font-size: 14px;
+    color: $theme-black-lite;
+  }
+
+  .title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  .factor {
+    .test-quality-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-row-gap: 18px;
+      justify-items: center;
+    }
+
+    .name {
+      font-weight: 500;
+      font-size: 20px;
+      color: $theme-black;
+    }
+
+    .sub-name {
+      margin-top: 16px;
+      margin-left: 8px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+
+}
+

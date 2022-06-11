@@ -1,0 +1,286 @@
+{
+    "reports": [
+        {
+            "report_id": "report1",
+            "test_tools": [
+                "Jmeter",
+                "Postman",
+                "httperf",
+                "Junit"
+            ],
+            "test_environment": {
+                "operating_system": "Centos8"
+            },
+            "test_list": [
+                {
+                    "case_id": "01",
+                    "status": "success",
+                    "running_time": "1234s"
+                },
+                {
+                    "case_id": "03",
+                    "status": "failed",
+                    "running_time": "42s"
+                },
+                {
+                    "case_id": "05",
+                    "status": "failed",
+                    "running_time": "9s"
+                },
+                {
+                    "case_id": "06",
+                    "status": "success",
+                    "running_time": "21s"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": "1",
+                "severe": "1",
+                "common": "0",
+                "slight": "0",
+                "total": "2"
+            },
+            "defect_list": [
+                {
+                    "case_id": "03",
+                    "defect_level": "fatal",
+                    "error_msg": "stack overflow",
+                    "reproduce_steps": "具体的复现步骤1"
+                },
+                {
+                    "case_id": "05",
+                    "defect_level": "severe",
+                    "error_msg": "out of time",
+                    "reproduce_steps": "具体的复现步骤2"
+                }
+            ],
+            "summary": {
+                "conclusion": "有两个测试用例无法通过",
+                "suggestion": "修改...的代码"
+            }
+        },
+        {
+            "report_id": "report2",
+            "test_tools": [
+                "siega",
+                "gatling",
+                "gtest",
+                "Junit"
+            ],
+            "test_environment": {
+                "operating_system": "Centos8"
+            },
+            "test_list": [
+                {
+                    "case_id": "07",
+                    "status": "success",
+                    "running_time": "1234s"
+                },
+                {
+                    "case_id": "02",
+                    "status": "success",
+                    "running_time": "42s"
+                },
+                {
+                    "case_id": "01",
+                    "status": "success",
+                    "running_time": "9s"
+                },
+                {
+                    "case_id": "05",
+                    "status": "success",
+                    "running_time": "21s"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": "0",
+                "severe": "0",
+                "common": "0",
+                "slight": "0",
+                "total": "0"
+            },
+            "defect_list": [],
+            "summary": {
+                "conclusion": "所有测试用例都可以通过",
+                "suggestion": "没有建议"
+            }
+        },
+        {
+            "report_id": "report3",
+            "test_tools": [
+                "Jmeter",
+                "Postman",
+                "httperf",
+                "Junit"
+            ],
+            "test_environment": {
+                "operating_system": "Centos8"
+            },
+            "test_list": [
+                {
+                    "case_id": "02",
+                    "status": "success",
+                    "running_time": "1234s"
+                },
+                {
+                    "case_id": "04",
+                    "status": "failed",
+                    "running_time": "42s"
+                },
+                {
+                    "case_id": "06",
+                    "status": "failed",
+                    "running_time": "9s"
+                },
+                {
+                    "case_id": "08",
+                    "status": "success",
+                    "running_time": "21s"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": "1",
+                "severe": "1",
+                "common": "0",
+                "slight": "0",
+                "total": "2"
+            },
+            "defect_list": [
+                {
+                    "case_id": "04",
+                    "defect_level": "fatal",
+                    "error_msg": "stack overflow",
+                    "reproduce_steps": "具体的复现步骤1"
+                },
+                {
+                    "case_id": "08",
+                    "defect_level": "severe",
+                    "error_msg": "out of time",
+                    "reproduce_steps": "具体的复现步骤2"
+                }
+            ],
+            "summary": {
+                "conclusion": "有两个测试用例无法通过",
+                "suggestion": "修改...的代码"
+            }
+        },
+        {
+            "report_id": "report4",
+            "test_tools": [
+                "Jmeter",
+                "gcover",
+                "fiddler",
+                "Junit"
+            ],
+            "test_environment": {
+                "operating_system": "Centos8"
+            },
+            "test_list": [
+                {
+                    "case_id": "08",
+                    "status": "success",
+                    "running_time": "1234s"
+                },
+                {
+                    "case_id": "01",
+                    "status": "failed",
+                    "running_time": "42s"
+                },
+                {
+                    "case_id": "03",
+                    "status": "failed",
+                    "running_time": "9s"
+                },
+                {
+                    "case_id": "09",
+                    "status": "success",
+                    "running_time": "21s"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": "1",
+                "severe": "1",
+                "common": "0",
+                "slight": "0",
+                "total": "2"
+            },
+            "defect_list": [
+                {
+                    "case_id": "03",
+                    "defect_level": "fatal",
+                    "error_msg": "stack overflow",
+                    "reproduce_steps": "具体的复现步骤1"
+                },
+                {
+                    "case_id": "01",
+                    "defect_level": "severe",
+                    "error_msg": "out of time",
+                    "reproduce_steps": "具体的复现步骤2"
+                }
+            ],
+            "summary": {
+                "conclusion": "有两个测试用例无法通过",
+                "suggestion": "修改...的代码"
+            }
+        },
+        {
+            "report_id": "report4",
+            "test_tools": [
+                "siega",
+                "Postman",
+                "gtest",
+                "Junit"
+            ],
+            "test_environment": {
+                "operating_system": "Centos8"
+            },
+            "test_list": [
+                {
+                    "case_id": "02",
+                    "status": "success",
+                    "running_time": "1234s"
+                },
+                {
+                    "case_id": "04",
+                    "status": "failed",
+                    "running_time": "42s"
+                },
+                {
+                    "case_id": "05",
+                    "status": "failed",
+                    "running_time": "9s"
+                },
+                {
+                    "case_id": "07",
+                    "status": "success",
+                    "running_time": "21s"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": "1",
+                "severe": "1",
+                "common": "0",
+                "slight": "0",
+                "total": "2"
+            },
+            "defect_list": [
+                {
+                    "case_id": "04",
+                    "defect_level": "fatal",
+                    "error_msg": "stack overflow",
+                    "reproduce_steps": "具体的复现步骤1"
+                },
+                {
+                    "case_id": "05",
+                    "defect_level": "severe",
+                    "error_msg": "out of time",
+                    "reproduce_steps": "具体的复现步骤2"
+                }
+            ],
+            "summary": {
+                "conclusion": "有两个测试用例无法通过",
+                "suggestion": "修改...的代码"
+            }
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+@import "~@/style/color.scss";
+
+
+.home {
+  min-height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-image: url("https://imgv3.fotor.com/images/background/background-image.png");
+  background-repeat: no-repeat;
+}
+
+.header {
+  box-sizing: border-box;
+  height: 100px;
+  padding: 0 64px;
+  margin: 0 auto;
+
+  .logo {
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .avatar {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .add-promise-btn {
+    height: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 30px;
+    color: #f4f5f6;
+    letter-spacing: .3px;
+    cursor: pointer;
+    background: $theme-blue-pro;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+  }
+
+
+}
+
+.page {
+  padding-top: 50px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 14px;
+
+
+  .homeText {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px 32px;
+    height: 42px;
+    border: none;
+    outline: none;
+    border-radius: 48px;
+    cursor: pointer;
+    background-color: $theme-blue-pro;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 64px 16px 0 16px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .bg-blue-orange {
+    background-color: $theme-blue-pro;
+
+    &:hover {
+      background-color: $theme-orange;
+    }
+  }
+
+  .border-blue-orange {
+    border: 2px $theme-orange solid;
+    color: $theme-orange;
+    background-color: transparent;
+
+    &:hover {
+      border: 2px $theme-blue-pro solid;
+      color: $theme-blue-pro;
+    }
+  }
+
+
+  .favicon {
+    object-fit: cover;
+    height: 80px;
+  }
+
+
+  .title-description {
+    font-size: 16px;
+
+    .add-promise-txt {
+      color: $theme-blue-pro;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+      font-size: 28px;
+
+      &:hover {
+        color: $theme-orange;
+      }
+    }
+  }
+}
+

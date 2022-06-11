@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.CollaborationMapper">
+
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into collaboration (test_id,worker_id,test_tools,operating_system,conclusion,suggestion,bug_img_url)
+            value (#{testId},#{workerId},#{testTools},#{operatingSystem},#{conclusion},#{suggestion},#{bugImgUrl});
+    </insert>
+
+
+    <select id="getCollaborationListById"
+            resultType="org.promise.test.service.mapperService.po.CollaborationPO">
+        select * from collaboration where id=#{id};
+    </select>
+
+
+    <select id="getCollaborationListByTestIdAndDeleted" resultType="org.promise.test.service.mapperService.po.CollaborationPO">
+        select * from collaboration where test_id=#{testId}
+            <if test="deleted!=null">
+                and deleted=#{deleted}
+            </if>
+    </select>
+
+    <update id="deleteById">
+        update collaboration set deleted=1 where id=#{id} AND deleted=0
+    </update>
+
+    <select id="getIdListByTestIdAndWorkerIdAndDeleted" resultType="java.lang.Long">
+        select id
+        from collaboration
+        where test_id=#{testId} AND worker_id=#{workerId}
+        <if test="deleted!=null">
+            AND deleted=#{deleted}
+        </if>
+    </select>
+
+</mapper>

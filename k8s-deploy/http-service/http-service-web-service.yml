@@ -1,0 +1,15 @@
+##用于测试用的暴露在外面的service
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: promise
+  name: http-service-web-service
+spec:
+  selector:
+    app: http-service
+  type: NodePort
+  ports:
+    - name: web
+      port: 80
+      targetPort: 31000
+      nodePort: 30850

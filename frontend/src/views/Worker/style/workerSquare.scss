@@ -1,0 +1,63 @@
+@import "~@/style/color.scss";
+
+
+.page {
+  box-sizing: border-box;
+  padding: 32px 16px;
+  width: 1200px;
+  margin: 0 auto;
+
+  .public-task-square, .recommend-task-square {
+    box-sizing: border-box;
+    padding: 4px;
+
+    .task-card-box {
+      display: inline-block;
+      margin-right: 38px;
+    }
+
+    .task-card-box:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.dialog {
+  .edit-btn {
+    height: 36px;
+    width: 220px;
+    border-radius: 36px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: $theme-blue;
+    color: white;
+  }
+}
+
+
+.unset-preference-dialog::v-deep(.el-dialog) {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+
+  .el-dialog__body {
+    padding: 20px;
+
+    p:first-child {
+      text-align: center;
+      color: $theme-black-lite;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    p:last-child {
+      color: $theme-gray;
+      margin-top: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+}

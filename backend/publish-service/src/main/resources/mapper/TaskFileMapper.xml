@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.publish.service.mapperService.TaskFileMapper">
+    <resultMap id="BaseResultMap" type="org.promise.publish.service.mapperService.po.TaskFilePO">
+        <result column="file_id" property="fileId"/>
+        <result column="task_id" property="taskId"/>
+        <result column="file_name" property="fileName"/>
+        <result column="file_url" property="fileUrl"/>
+        <result column="file_size" property="fileSize"/>
+        <result column="file_last_update_time" property="fileLastUpdateTime"/>
+        <result column="file_type" property="fileType"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <insert id="insert">
+        insert into task_file (task_id, file_name, file_url, file_size, file_last_update_time, file_type)
+        values (#{taskId}, #{fileName}, #{fileUrl}, #{fileSize}, #{fileLastUpdateTime}, #{fileType});
+    </insert>
+
+    <insert id="insertBatch">
+        insert into task_file
+        (task_id,file_name,file_url,file_size,file_last_update_time, file_type)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.taskId},
+            #{item.fileName},
+            #{item.fileUrl},
+            #{item.fileSize},
+            #{item.fileLastUpdateTime},
+            #{item.fileType}
+            )
+        </foreach>
+    </insert>
+    <delete id="deleteByTaskId">
+        update task_file set deleted=1 where task_id=#{taskId};
+    </delete>
+
+    <select id="getTaskFileByTaskId" resultType="org.promise.publish.service.mapperService.po.TaskFilePO">
+        select *
+        from task_file
+        where task_id = #{taskId}
+          and deleted = 0;
+    </select>
+
+
+</mapper>

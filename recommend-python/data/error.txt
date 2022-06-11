@@ -1,0 +1,73 @@
+badRequest	API 请求无效或格式不正确。因此，API 服务器无法理解该请求。
+badBinaryDomainRequest	二进制域请求无效。
+badContent	不支持请求数据的内容类型或多部分请求的一部分的内容类型。
+badLockedDomainRequest	锁定的域请求无效。
+corsRequestWithXOrigin	CORS 请求包含一个 XD3 X-Origin 标头，它表示错误的 CORS 请求。
+endpointConstraintMismatch	请求失败，因为它与指定的 API 不匹配。检查 URL 路径的值以确保它是正确的。
+invalid	请求失败，因为它包含无效值。该值可以是参数值、标头值或属性值。
+invalidAltValue	alt参数值指定未知的输出格式。
+invalidHeader	请求失败，因为它包含无效的标头。
+invalidParameter	请求失败，因为它包含无效的参数或参数值。查看 API 文档以确定哪些参数对您的请求有效。
+invalidQuery	请求无效。检查 API 文档以确定请求支持哪些参数，并查看请求是否包含无效的参数组合或无效的参数值。检查q请求参数的值。
+keyExpired	请求中提供的 API 密钥已过期，这意味着 API 服务器无法检查发出请求的应用程序的配额限制。查看 Google Developers Console了解更多信息或获取新密钥。
+keyInvalid	请求中提供的 API 密钥无效，这意味着 API 服务器无法检查发出请求的应用程序的配额限制。使用 Google Developers Console查找您的 API 密钥或获取一个。
+lockedDomainCreationFailure	OAuth 令牌是在查询字符串中收到的，此 API 禁止 JSON 或 XML 以外的响应格式。如果可能，请尝试在 Authorization 标头中发送 OAuth 令牌。
+notDownload	只有媒体下载请求可以发送到 URL 路径。将请求重新发送到相同的路径，但没有前缀。/download/*/download
+notUpload	请求失败，因为它不是上传请求，只能将上传请求发送到 URI。尝试将请求重新发送到相同的路径，但不带 前缀。/upload/*/upload
+parseError	API 服务器无法解析请求正文。
+required	API 请求缺少必需的信息。所需信息可以是参数或资源属性。
+tooManyParts	多部分请求失败，因为它包含的部分太多
+unknownApi	请求调用的 API 无法识别。
+unsupportedMediaProtocol	客户端正在使用不受支持的媒体协议。
+unsupportedOutputFormat	alt参数值指定此服务不支持的输出格式。检查alt请求参数的值。
+wrongUrlForUpload	该请求是一个上传请求，但它失败了，因为它没有发送到正确的 URI。上传请求必须发送到包含 前缀的 URI。尝试将请求重新发送到相同的路径，但带有前缀。/upload/*/upload
+unauthorized	用户无权提出请求。
+authError	为请求提供的授权凭据无效。检查AuthorizationHTTP 请求标头的值。
+expired	会话已过期。检查AuthorizationHTTP 请求标头的值。
+lockedDomainExpired	请求失败，因为先前有效的锁定域已过期。
+required	用户必须登录才能发出此 API 请求。检查AuthorizationHTTP 请求标头的值。
+forbidden	请求的操作被禁止，无法完成。
+accessNotConfigured	您的项目未配置为访问此 API。请使用Google Developers Console为您的项目激活 API。
+accessNotConfigured	该项目因滥用而被阻止。请参阅。
+accessNotConfigured	该项目已被标记为删除。
+accountDeleted	与请求的授权凭据关联的用户帐户已被删除。检查AuthorizationHTTP 请求标头的值。
+accountDisabled	与请求的授权凭据关联的用户帐户已被禁用。检查AuthorizationHTTP 请求标头的值。
+accountUnverified	提出请求的用户的电子邮件地址尚未经过验证。检查AuthorizationHTTP 请求标头的值。
+concurrentLimitExceeded	请求失败，因为已达到并发使用限制。
+dailyLimitExceeded	已达到 API 的每日配额限制。
+dailyLimitExceeded	已达到每日额度上限，该项目因滥用而被封杀。请参阅Google API 合规性支持表单以帮助解决问题。
+dailyLimitExceededUnreg	请求失败，因为已达到未经身份验证的 API 使用的每日限制。继续使用 API 需要通过Google Developers Console进行注册。
+downloadServiceForbidden	API 不支持下载服务。
+insufficientAudience	无法为此受众完成请求。
+insufficientAuthorizedParty	无法完成此应用程序的请求。
+insufficientPermissions	经过身份验证的用户没有足够的权限来执行此请求。
+limitExceeded	由于访问或速率限制，该请求无法完成。
+lockedDomainForbidden	此 API 不支持锁定域。
+quotaExceeded	请求的操作需要的资源超出配额允许的范围。
+rateLimitExceeded	在给定的时间跨度内发送了太多请求。
+rateLimitExceededUnreg	已超出速率限制，您必须注册您的应用程序才能继续调用 API。请使用 Google Developers Console注册。
+responseTooLarge	请求的资源太大而无法返回。
+servingLimitExceeded	已达到为 API 指定的总体速率限制。
+sslRequired	执行此操作需要 SSL。
+unknownAuth	API 服务器无法识别用于请求的授权方案。检查AuthorizationHTTP 请求标头的值。
+userRateLimitExceeded	请求失败，因为已达到每个用户的速率限制。
+userRateLimitExceededUnreg	请求失败，因为已达到每个用户的速率限制，并且未在请求中标识客户端开发人员。请使用 Google Developer Console (https://console.developers.google.com) 为您的应用程序创建一个项目。
+variableTermExpiredDailyExceeded	请求失败，因为可变期限配额已过期并且已达到每日限制。
+variableTermLimitExceeded	请求失败，因为已达到可变期限配额限制。
+ACCOUNT_FILTER_MATCHLESS	帐户过滤器与任何帐户都不匹配。
+QUERY_ACCOUNT_UNAVAILABLE	找不到请求的数据源帐户。
+QUERY_API_RATE_LIMITED	数据源 API 是限速请求。在重试您的请求之前，请等待一段时间。
+QUERY_AUTH_EXPIRED	数据源访问令牌已过期，无法自动刷新。
+QUERY_AUTH_FAILURE	登录数据源失败。请联系支持。
+QUERY_AUTH_LOGIN_FAILED	数据源身份验证凭据不再有效。
+QUERY_AUTH_NOT_FOUND	没有为请求找到合适的数据源身份验证。
+QUERY_AUTH_UNAVAILABLE	找不到请求的数据源身份验证。
+QUERY_SEGMENT_UNAVAILABLE	找不到请求的数据源段。
+400 - 错误请求	该请求是不可接受的，通常是由于缺少必需的参数。
+401 - 未经授权	未提供有效的 API 密钥。
+402 - 请求失败	参数有效，但请求失败。
+403 - 禁止	API 密钥无权执行请求。
+404 - 未找到	请求的资源不存在。
+409 - 冲突	该请求与另一个请求冲突（可能是由于使用了相同的幂等密钥）。
+429 - 请求过多	太多请求太快地到达 API。我们建议对您的请求进行指数回退。
+500、502、503、504 - 服务器错误	Stripe 那边出了点问题。（这些很少见。）

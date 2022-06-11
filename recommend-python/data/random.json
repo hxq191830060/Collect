@@ -1,0 +1,2499 @@
+{
+    "reports": [
+        {
+            "report_id": "report_1",
+            "test_tools": [
+                "Wapt",
+                "AppliTools",
+                "Testpad"
+            ],
+            "operating_system": "CentOS7.6",
+            "test_list": [
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "common",
+                    "error_msg": "badBinaryDomainRequest 二进制域请求无效。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_5",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_API_RATE_LIMITED 数据源 API 是限速请求。在重试您的请求之前,请等待一段时间。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_2",
+            "test_tools": [
+                "Postman"
+            ],
+            "operating_system": "Debian10.2",
+            "test_list": [
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 1,
+                "total": 3
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_8",
+                    "defect_level": "severe",
+                    "error_msg": "dailyLimitExceededUnreg 请求失败,因为已达到未经身份验证的 API 使用的每日限制。继续使用 API 需要通过Google Developers Console进行注册。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_9",
+                    "defect_level": "severe",
+                    "error_msg": "lockedDomainForbidden 此 API 不支持锁定域。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_4",
+                    "defect_level": "fatal",
+                    "error_msg": "badRequest API 请求无效或格式不正确。因此,API 服务器无法理解该请求。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_3",
+            "test_tools": [
+                "Zephyr Scale",
+                "Robotium"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_3",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 1,
+                "total": 3
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_3",
+                    "defect_level": "fatal",
+                    "error_msg": "409 - 冲突 该请求与另一个请求冲突（可能是由于使用了相同的幂等密钥）。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_11",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_API_RATE_LIMITED 数据源 API 是限速请求。在重试您的请求之前,请等待一段时间。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_18",
+                    "defect_level": "fatal",
+                    "error_msg": "expired 会话已过期。检查AuthorizationHTTP 请求标头的值。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_4",
+            "test_tools": [
+                "Webload",
+                "FogBugz"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_19",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_3",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_19",
+                    "defect_level": "slight",
+                    "error_msg": "invalidAltValue alt参数值指定未知的输出格式。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_5",
+            "test_tools": [
+                "Testpad",
+                "TestMonitor",
+                "SauceLabs",
+                "Xray"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_15",
+                    "defect_level": "fatal",
+                    "error_msg": "invalidHeader 请求失败,因为它包含无效的标头。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_1",
+                    "defect_level": "common",
+                    "error_msg": "500、502、503、504 - 服务器错误 Stripe 那边出了点问题。（这些很少见。）",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_6",
+            "test_tools": [
+                "Robotium",
+                "SoapUI",
+                "Wapt"
+            ],
+            "operating_system": "CentOS8.0",
+            "test_list": [
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_SEGMENT_UNAVAILABLE 找不到请求的数据源段。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_7",
+            "test_tools": [
+                "Loadrunner",
+                "Kobiton",
+                "Keysight Eggplant"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "common",
+                    "error_msg": "badBinaryDomainRequest 二进制域请求无效。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_8",
+            "test_tools": [
+                "LambdaTest",
+                "Parasoft",
+                "Zaptest"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "slight",
+                    "error_msg": "ACCOUNT_FILTER_MATCHLESS 帐户过滤器与任何帐户都不匹配。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_2",
+                    "defect_level": "slight",
+                    "error_msg": "QUERY_API_RATE_LIMITED 数据源 API 是限速请求。在重试您的请求之前,请等待一段时间。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_9",
+            "test_tools": [
+                "Loadrunner",
+                "ACCELQ"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_17",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_17",
+                    "defect_level": "slight",
+                    "error_msg": "quotaExceeded 请求的操作需要的资源超出配额允许的范围。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_10",
+            "test_tools": [
+                "BlazeMeter",
+                "FogBugz"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "severe",
+                    "error_msg": "variableTermLimitExceeded 请求失败,因为已达到可变期限配额限制。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_9",
+                    "defect_level": "fatal",
+                    "error_msg": "parseError API 服务器无法解析请求正文。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_11",
+            "test_tools": [
+                "Testim"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "slight",
+                    "error_msg": "unsupportedOutputFormat alt参数值指定此服务不支持的输出格式。检查alt请求参数的值。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_12",
+            "test_tools": [
+                "TestRail",
+                "TestComplete",
+                "Watir"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_13",
+            "test_tools": [
+                "Watir",
+                "LambdaTest",
+                "RedMine",
+                "Xray"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_9",
+                    "defect_level": "slight",
+                    "error_msg": "QUERY_ACCOUNT_UNAVAILABLE 找不到请求的数据源帐户。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "severe",
+                    "error_msg": "403 - 禁止 API 密钥无权执行请求。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_14",
+            "test_tools": [
+                "Perfecto",
+                "BugNet",
+                "SoapUI"
+            ],
+            "operating_system": "Debian10.2",
+            "test_list": [
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "fatal",
+                    "error_msg": "quotaExceeded 请求的操作需要的资源超出配额允许的范围。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_9",
+                    "defect_level": "severe",
+                    "error_msg": "401 - 未经授权 未提供有效的 API 密钥。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_15",
+            "test_tools": [
+                "Appuim"
+            ],
+            "operating_system": "Debian10.2",
+            "test_list": [
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "common",
+                    "error_msg": "401 - 未经授权 未提供有效的 API 密钥。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_16",
+            "test_tools": [
+                "Testpad"
+            ],
+            "operating_system": "CentOS8.0",
+            "test_list": [
+                {
+                    "case_id": "Case_14",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_14",
+                    "defect_level": "common",
+                    "error_msg": "keyInvalid 请求中提供的 API 密钥无效,这意味着 API 服务器无法检查发出请求的应用程序的配额限制。使用 Google Developers Console查找您的 API 密钥或获取一个。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "slight",
+                    "error_msg": "limitExceeded 由于访问或速率限制,该请求无法完成。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_17",
+            "test_tools": [
+                "Robotium",
+                "Testim",
+                "Testpad"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_3",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_3",
+                    "defect_level": "common",
+                    "error_msg": "unsupportedOutputFormat alt参数值指定此服务不支持的输出格式。检查alt请求参数的值。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "common",
+                    "error_msg": "QUERY_SEGMENT_UNAVAILABLE 找不到请求的数据源段。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_18",
+            "test_tools": [
+                "Testim"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_10",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_3",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 2,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_10",
+                    "defect_level": "common",
+                    "error_msg": "unauthorized 用户无权提出请求。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_3",
+                    "defect_level": "fatal",
+                    "error_msg": "rateLimitExceededUnreg 已超出速率限制,您必须注册您的应用程序才能继续调用 API。请使用 Google Developers Console注册。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_19",
+            "test_tools": [
+                "SauceLabs",
+                "Loadrunner",
+                "Bugzilla",
+                "Testiny"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_7",
+                    "defect_level": "fatal",
+                    "error_msg": "invalidQuery 请求无效。检查 API 文档以确定请求支持哪些参数,并查看请求是否包含无效的参数组合或无效的参数值。检查q请求参数的值。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_20",
+            "test_tools": [
+                "BlazeMeter",
+                "Testim",
+                "Avo Assure"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_17",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_3",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_17",
+                    "defect_level": "slight",
+                    "error_msg": "endpointConstraintMismatch 请求失败,因为它与指定的 API 不匹配。检查 URL 路径的值以确保它是正确的。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_21",
+            "test_tools": [
+                "Zephyr Scale",
+                "Avo Assure",
+                "Selenium",
+                "SauceLabs"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_19",
+                    "defect_level": "slight",
+                    "error_msg": "endpointConstraintMismatch 请求失败,因为它与指定的 API 不匹配。检查 URL 路径的值以确保它是正确的。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_22",
+            "test_tools": [
+                "Keysight Eggplant"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_19",
+                    "defect_level": "common",
+                    "error_msg": "QUERY_SEGMENT_UNAVAILABLE 找不到请求的数据源段。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "severe",
+                    "error_msg": "invalidHeader 请求失败,因为它包含无效的标头。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_23",
+            "test_tools": [
+                "SoapUI",
+                "Parasoft"
+            ],
+            "operating_system": "CentOS8.0",
+            "test_list": [
+                {
+                    "case_id": "Case_18",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 1,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_18",
+                    "defect_level": "slight",
+                    "error_msg": "notDownload 只有媒体下载请求可以发送到 URL 路径。将请求重新发送到相同的路径,但没有前缀。/download/*/download",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "slight",
+                    "error_msg": "429 - 请求过多 太多请求太快地到达 API。我们建议对您的请求进行指数回退。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_24",
+            "test_tools": [
+                "Spira Test"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_7",
+                    "defect_level": "slight",
+                    "error_msg": "wrongUrlForUpload 该请求是一个上传请求,但它失败了,因为它没有发送到正确的 URI。上传请求必须发送到包含 前缀的 URI。尝试将请求重新发送到相同的路径,但带有前缀。/upload/*/upload",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_25",
+            "test_tools": [
+                "Practitest",
+                "Zephyr Scale",
+                "Bugzilla"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_3",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_19",
+                    "defect_level": "severe",
+                    "error_msg": "invalidParameter 请求失败,因为它包含无效的参数或参数值。查看 API 文档以确定哪些参数对您的请求有效。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_26",
+            "test_tools": [
+                "SoapUI",
+                "Perfecto"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_8",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 1,
+                "slight": 1,
+                "total": 3
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_8",
+                    "defect_level": "common",
+                    "error_msg": "accessNotConfigured 您的项目未配置为访问此 API。请使用Google Developers Console为您的项目激活 API。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "severe",
+                    "error_msg": "limitExceeded 由于访问或速率限制,该请求无法完成。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_10",
+                    "defect_level": "slight",
+                    "error_msg": "invalidParameter 请求失败,因为它包含无效的参数或参数值。查看 API 文档以确定哪些参数对您的请求有效。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_27",
+            "test_tools": [
+                "Wapt"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_28",
+            "test_tools": [
+                "Avo Assure",
+                "Selenium",
+                "TestRail"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_1",
+                    "defect_level": "common",
+                    "error_msg": "userRateLimitExceeded 请求失败,因为已达到每个用户的速率限制。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_29",
+            "test_tools": [
+                "Keysight Eggplant"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_6",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "severe",
+                    "error_msg": "invalidParameter 请求失败,因为它包含无效的参数或参数值。查看 API 文档以确定哪些参数对您的请求有效。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_30",
+            "test_tools": [
+                "Practitest",
+                "Loadrunner",
+                "TestComplete",
+                "Testiny"
+            ],
+            "operating_system": "CentOS8.0",
+            "test_list": [
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_31",
+            "test_tools": [
+                "Wapt"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_2",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 2,
+                "slight": 1,
+                "total": 4
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_2",
+                    "defect_level": "severe",
+                    "error_msg": "badBinaryDomainRequest 二进制域请求无效。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "fatal",
+                    "error_msg": "rateLimitExceeded 在给定的时间跨度内发送了太多请求。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_1",
+                    "defect_level": "common",
+                    "error_msg": "QUERY_AUTH_FAILURE 登录数据源失败。请联系支持。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "severe",
+                    "error_msg": "notDownload 只有媒体下载请求可以发送到 URL 路径。将请求重新发送到相同的路径,但没有前缀。/download/*/download",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_32",
+            "test_tools": [
+                "Keysight Eggplant"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_18",
+                    "defect_level": "fatal",
+                    "error_msg": "sslRequired 执行此操作需要 SSL。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "slight",
+                    "error_msg": "QUERY_AUTH_EXPIRED 数据源访问令牌已过期,无法自动刷新。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_33",
+            "test_tools": [
+                "TestComplete",
+                "JIRA"
+            ],
+            "operating_system": "Ubuntu20.04",
+            "test_list": [
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_16",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_ACCOUNT_UNAVAILABLE 找不到请求的数据源帐户。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_34",
+            "test_tools": [
+                "ACCELQ",
+                "Ghostlab"
+            ],
+            "operating_system": "CentOS8.0",
+            "test_list": [
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_35",
+            "test_tools": [
+                "Webload"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_3",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 2,
+                "slight": 1,
+                "total": 3
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "fatal",
+                    "error_msg": "invalid 请求失败,因为它包含无效值。该值可以是参数值、标头值或属性值。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_9",
+                    "defect_level": "fatal",
+                    "error_msg": "invalidHeader 请求失败,因为它包含无效的标头。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "fatal",
+                    "error_msg": "sslRequired 执行此操作需要 SSL。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_36",
+            "test_tools": [
+                "TestMonitor",
+                "TestComplete",
+                "Spira Test"
+            ],
+            "operating_system": "Debian10.2",
+            "test_list": [
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 1,
+                "total": 3
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "common",
+                    "error_msg": "badContent 不支持请求数据的内容类型或多部分请求的一部分的内容类型。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "severe",
+                    "error_msg": "wrongUrlForUpload 该请求是一个上传请求,但它失败了,因为它没有发送到正确的 URI。上传请求必须发送到包含 前缀的 URI。尝试将请求重新发送到相同的路径,但带有前缀。/upload/*/upload",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_15",
+                    "defect_level": "slight",
+                    "error_msg": "authError 为请求提供的授权凭据无效。检查AuthorizationHTTP 请求标头的值。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_37",
+            "test_tools": [
+                "Postman",
+                "Practitest"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 1,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "fatal",
+                    "error_msg": "insufficientAudience 无法为此受众完成请求。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_5",
+                    "defect_level": "slight",
+                    "error_msg": "insufficientAuthorizedParty 无法完成此应用程序的请求。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_38",
+            "test_tools": [
+                "ACCELQ",
+                "Wapt",
+                "TestComplete"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_6",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_15",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_API_RATE_LIMITED 数据源 API 是限速请求。在重试您的请求之前,请等待一段时间。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_39",
+            "test_tools": [
+                "SoapUI"
+            ],
+            "operating_system": "CentOS7.6",
+            "test_list": [
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_40",
+            "test_tools": [
+                "Loadrunner",
+                "Wapt"
+            ],
+            "operating_system": "Debian10.2",
+            "test_list": [
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_41",
+            "test_tools": [
+                "JIRA",
+                "Kobiton"
+            ],
+            "operating_system": "CentOS7.6",
+            "test_list": [
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_19",
+                    "defect_level": "slight",
+                    "error_msg": "parseError API 服务器无法解析请求正文。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_42",
+            "test_tools": [
+                "RedMine",
+                "Testim",
+                "Parasoft"
+            ],
+            "operating_system": "CentOS7.6",
+            "test_list": [
+                {
+                    "case_id": "Case_13",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_11",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_16",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_14",
+                    "defect_level": "slight",
+                    "error_msg": "lockedDomainCreationFailure OAuth 令牌是在查询字符串中收到的,此 API 禁止 JSON 或 XML 以外的响应格式。如果可能,请尝试在 Authorization 标头中发送 OAuth 令牌。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_43",
+            "test_tools": [
+                "Appuim",
+                "Webload",
+                "Perfecto"
+            ],
+            "operating_system": "Windows11",
+            "test_list": [
+                {
+                    "case_id": "Case_8",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_1",
+                    "status": "Fail"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 1,
+                "common": 0,
+                "slight": 1,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_8",
+                    "defect_level": "severe",
+                    "error_msg": "unauthorized 用户无权提出请求。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_1",
+                    "defect_level": "common",
+                    "error_msg": "badContent 不支持请求数据的内容类型或多部分请求的一部分的内容类型。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_44",
+            "test_tools": [
+                "Jmeter",
+                "Zephyr Scale",
+                "Avo Assure",
+                "Watir"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_5",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 1,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_20",
+                    "defect_level": "common",
+                    "error_msg": "responseTooLarge 请求的资源太大而无法返回。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_45",
+            "test_tools": [
+                "Avo Assure",
+                "Testpad",
+                "Testiny"
+            ],
+            "operating_system": "Ubuntu18.04",
+            "test_list": [
+                {
+                    "case_id": "Case_6",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_6",
+                    "defect_level": "common",
+                    "error_msg": "invalidHeader 请求失败,因为它包含无效的标头。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_7",
+                    "defect_level": "common",
+                    "error_msg": "quotaExceeded 请求的操作需要的资源超出配额允许的范围。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_46",
+            "test_tools": [
+                "SauceLabs",
+                "Wapt"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_17",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_15",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_6",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 1,
+                "slight": 0,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_15",
+                    "defect_level": "slight",
+                    "error_msg": "QUERY_AUTH_FAILURE 登录数据源失败。请联系支持。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_47",
+            "test_tools": [
+                "Watir"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_8",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_4",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 0
+            },
+            "defect_list": [],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_48",
+            "test_tools": [
+                "TestRail",
+                "LambdaTest"
+            ],
+            "operating_system": "Debian11.1",
+            "test_list": [
+                {
+                    "case_id": "Case_15",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_12",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_17",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_10",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 2,
+                "severe": 0,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_15",
+                    "defect_level": "fatal",
+                    "error_msg": "invalidHeader 请求失败,因为它包含无效的标头。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_17",
+                    "defect_level": "slight",
+                    "error_msg": "QUERY_ACCOUNT_UNAVAILABLE 找不到请求的数据源帐户。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_49",
+            "test_tools": [
+                "JIRA",
+                "Kobiton",
+                "Testpad"
+            ],
+            "operating_system": "CentOS8.2",
+            "test_list": [
+                {
+                    "case_id": "Case_15",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_20",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_18",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_9",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 0,
+                "common": 0,
+                "slight": 1,
+                "total": 1
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_18",
+                    "defect_level": "severe",
+                    "error_msg": "keyInvalid 请求中提供的 API 密钥无效,这意味着 API 服务器无法检查发出请求的应用程序的配额限制。使用 Google Developers Console查找您的 API 密钥或获取一个。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        },
+        {
+            "report_id": "report_50",
+            "test_tools": [
+                "Testim",
+                "Zephyr Scale"
+            ],
+            "operating_system": "Windows10",
+            "test_list": [
+                {
+                    "case_id": "Case_14",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_13",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_2",
+                    "status": "Fail"
+                },
+                {
+                    "case_id": "Case_7",
+                    "status": "Success"
+                },
+                {
+                    "case_id": "Case_19",
+                    "status": "Success"
+                }
+            ],
+            "defect_statistics": {
+                "fatal": 0,
+                "severe": 2,
+                "common": 0,
+                "slight": 0,
+                "total": 2
+            },
+            "defect_list": [
+                {
+                    "case_id": "Case_13",
+                    "defect_level": "severe",
+                    "error_msg": "QUERY_ACCOUNT_UNAVAILABLE 找不到请求的数据源帐户。",
+                    "reproduce_steps": "reproduce_steps"
+                },
+                {
+                    "case_id": "Case_2",
+                    "defect_level": "fatal",
+                    "error_msg": "lockedDomainCreationFailure OAuth 令牌是在查询字符串中收到的,此 API 禁止 JSON 或 XML 以外的响应格式。如果可能,请尝试在 Authorization 标头中发送 OAuth 令牌。",
+                    "reproduce_steps": "reproduce_steps"
+                }
+            ],
+            "conclusion": "this is conclusion",
+            "suggestion": "this is suggestion"
+        }
+    ]
+}

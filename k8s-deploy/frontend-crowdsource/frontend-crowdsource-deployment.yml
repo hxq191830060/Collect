@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-crowdsource-deployment
+  namespace: promise
+spec:
+  selector:
+    matchLabels:
+      app: frontend-crowdsource
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: frontend-crowdsource
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: frontend-crowdsource
+          image: registry.cn-hangzhou.aliyuncs.com/homework-promise/frontend-crowdsource:lastest
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: 5Mi
+          ports:
+            - containerPort: 80
+          env:
+            - name: TZ
+              value: Asia/Shanghai
+      imagePullSecrets:
+        - name: aliyun-secret
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - frontend-crowdsource
+              weight: 100

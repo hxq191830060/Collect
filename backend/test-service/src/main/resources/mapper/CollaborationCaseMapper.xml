@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.promise.test.service.mapperService.CollaborationCaseMapper">
+
+    <insert id="insert" parameterType="org.promise.test.service.mapperService.po.CollaborationCasePO">
+        insert into collaboration_case (collaboration_id, case_id, status, running_time, defect_level, error_msg, reproduce_steps)
+        VALUE (#{collaborationId},#{caseId},#{status},#{runningTime},#{defectLevel},#{errorMsg},#{reproduceSteps});
+    </insert>
+
+
+    <insert id="insertBatch" parameterType="org.promise.test.service.mapperService.po.CollaborationCasePO">
+        insert into collaboration_case (collaboration_id, case_id, status, running_time, defect_level, error_msg, reproduce_steps)
+        VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.collaborationId},#{item.caseId},#{item.status},#{item.runningTime},#{item.defectLevel},#{item.errorMsg},#{item.reproduceSteps})
+        </foreach>
+    </insert>
+
+    <update id="deleteAllCollaborationCaseByCollaborationId" parameterType="java.lang.Long">
+        update collaboration_case
+        set deleted=1
+        where collaboration_id=#{collaborationId} AND deleted=0;
+    </update>
+
+    <select id="getCollaborationCaseByCollaborationIdAndDeleted" resultType="org.promise.test.service.mapperService.po.CollaborationCasePO">
+        select * from collaboration_case
+        where  collaboration_id=#{collaborationId}
+            <if test="deleted!=null">
+                AND deleted=#{deleted}
+            </if>
+    </select>
+
+</mapper>
