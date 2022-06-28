@@ -109,8 +109,8 @@
 
 ## 1.5 服务器资源使用情况
 
-* 使用了6台服务器构建一个Kubernetes集群
-* 还使用了1台服务器来作为NFS服务器，并负责运行Jenkins
+* 使用了**6台服务器**构建一个**Kubernetes集群**
+* 还使用了**1台服务器**来作为**NFS服务器**，并负责运行Jenkins
 * 同时使用了阿里云OSS和阿里云镜像仓库
 
 ![服务器资源使用情况](doc/asserts/服务器资源使用情况.png)
@@ -123,21 +123,7 @@
 
 ![架构全局图](doc/asserts/架构全局图.png)
 
-**云原生PaaS平台的组成如下**
-
-* **PaaS平台核心**
-  * **存储部分**
-    * NFS——搭建了一台NFS服务器，来提供网络文件存储
-    * OSS——阿里云的对象存储服务
-    * 镜像仓库——使用阿里云镜像仓库来管理所有的镜像
-  * **容器编排与集群管理**——搭建了一个6节点的Kubernetes集群，所有的服务都运行在该Kubernetes集群中
-* **DevOps工具链**
-  * **版本控制**——**Git+GitLab**
-  * **自动化构建**——**Maven+Webpack**
-  * **自动化测试**——**JUnit+Mockito+JaCoCo**
-  * **CI/CD**——以**Jenkins**为核心，配合**Kubernetes**实现自动化的CI/CD
-  * **容器化**——**Docker**
-  * **Kubernetes控制台**——**Kuboard**
+![云原生PaaS平台](doc/asserts/云原生PaaS平台.png)
 
 
 
